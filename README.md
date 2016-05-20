@@ -27,7 +27,7 @@ import LSDialogViewController
 // to show the dialog
 let dialogViewController: CustomDialogViewController = CustomDialogViewController(nibName:"CustomDialog", bundle: nil)
 dialogViewController.delegate = self
-self.presentDialogViewController(dialogViewController, animationPattern: animationPattern, backgroundViewType: backgroundViewType, dismissButtonEnabled: Bool, completion: { () -> Void in })
+self.presentDialogViewController(dialogViewController, animationPattern: animationPattern, completion: { () -> Void in })
 
 // to dismiss the dialog
 self.dismissDialogViewController(animationPattern)
