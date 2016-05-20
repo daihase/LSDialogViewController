@@ -1,0 +1,6 @@
+framework module LSDialogViewController {
+  umbrella header "LSDialogViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}

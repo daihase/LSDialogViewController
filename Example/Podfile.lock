@@ -1,0 +1,16 @@
+PODS:
+  - LSDialogViewController (0.1.0)
+
+DEPENDENCIES:
+  - LSDialogViewController (from `../`)
+
+EXTERNAL SOURCES:
+  LSDialogViewController:
+    :path: ../
+
+SPEC CHECKSUMS:
+  LSDialogViewController: 8150a438eec81af6ae78c7291b7085986a095a4d
+
+PODFILE CHECKSUM: f9169fd7ec329cc3a8743750da4b2886782727d0
+
+COCOAPODS: 1.0.0

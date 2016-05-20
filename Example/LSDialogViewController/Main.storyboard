@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LSDialogViewController_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWI-WL-aId">
+                                <rect key="frame" x="50" y="81" width="275" height="34.5"/>
+                                <color key="backgroundColor" red="0.72437263257575757" green="0.35219683504332017" blue="0.37448367992830844" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XWI-WL-aId" secondAttribute="height" multiplier="8:1" id="NUd-UC-nnf"/>
+                                </constraints>
+                                <state key="normal" title="Fade-In / Fade-Out"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapButtonFadeInFadeOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EXl-Je-76B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79q-sM-rG8">
+                                <rect key="frame" x="50" y="125" width="275" height="34.5"/>
+                                <color key="backgroundColor" red="0.48209846363193759" green="0.61093378544490906" blue="0.72437263257575757" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="79q-sM-rG8" secondAttribute="height" multiplier="8:1" id="iY2-mP-hgt"/>
+                                </constraints>
+                                <state key="normal" title="Zoom-In / Zoom-Out"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapButtonZoomInZoomOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Va3-PK-FAK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGg-Ka-hrO">
+                                <rect key="frame" x="50" y="170" width="275" height="34"/>
+                                <color key="backgroundColor" red="0.72437263257575757" green="0.64841165023839886" blue="0.36939309894666689" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fGg-Ka-hrO" secondAttribute="height" multiplier="8:1" id="jWn-Kv-QXC"/>
+                                </constraints>
+                                <state key="normal" title="Slide-Bottom / Slide-Bottom"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapButtonSlideBottomBottom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GzC-5I-IL2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ar-EE-L5j">
+                                <rect key="frame" x="50" y="214" width="275" height="34.5"/>
+                                <color key="backgroundColor" red="0.72437263259999995" green="0.64841165020000002" blue="0.36939309889999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9Ar-EE-L5j" secondAttribute="height" multiplier="8:1" id="Wbj-6R-NRp"/>
+                                </constraints>
+                                <state key="normal" title="Slide-Bottom / Slide-Top"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapButtonSlideBottomTop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uwm-Gg-MzZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qt1-oZ-vVY">
+                                <rect key="frame" x="50" y="258" width="275" height="34.5"/>
+                                <color key="backgroundColor" red="0.72437263259999995" green="0.64841165020000002" blue="0.36939309889999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Qt1-oZ-vVY" secondAttribute="height" multiplier="8:1" id="Uv5-9s-ubG"/>
+                                </constraints>
+                                <state key="normal" title="Slide-Left / Slide-Left"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapButtonSlideLeftLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E44-VC-t0d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2Z-nA-ikE">
+                                <rect key="frame" x="50" y="303" width="275" height="34.5"/>
+                                <color key="backgroundColor" red="0.72437263259999995" green="0.64841165020000002" blue="0.36939309889999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Q2Z-nA-ikE" secondAttribute="height" multiplier="8:1" id="Ebu-hY-pk9"/>
+                                </constraints>
+                                <state key="normal" title="Slide-Left / Slide-Right"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapButtonSlideLeftRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="go9-Sg-4YO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JO1-ng-vwb">
+                                <rect key="frame" x="50" y="347" width="275" height="34"/>
+                                <color key="backgroundColor" red="0.72437263259999995" green="0.64841165020000002" blue="0.36939309889999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JO1-ng-vwb" secondAttribute="height" multiplier="8:1" id="wAx-Jb-X9t"/>
+                                </constraints>
+                                <state key="normal" title="Slide-Top / Slide-Top"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapButtonSlideTopTop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bVU-6V-q6L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qm-Fy-5fQ">
+                                <rect key="frame" x="50" y="391" width="275" height="34.5"/>
+                                <color key="backgroundColor" red="0.72437263259999995" green="0.64841165020000002" blue="0.36939309889999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6Qm-Fy-5fQ" secondAttribute="height" multiplier="8:1" id="X83-KW-5d4"/>
+                                </constraints>
+                                <state key="normal" title="Slide-Top / Slide-Bottom"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapButtonSlideTopBottom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O3g-7c-k62"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ap-Os-7Mx">
+                                <rect key="frame" x="50" y="435" width="275" height="34.5"/>
+                                <color key="backgroundColor" red="0.72437263259999995" green="0.64841165020000002" blue="0.36939309889999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0Ap-Os-7Mx" secondAttribute="height" multiplier="8:1" id="ATy-MT-idp"/>
+                                </constraints>
+                                <state key="normal" title="Slide-Right / Slide-Right"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapButtonSlideRightRight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gHh-ru-NJm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ch6-dO-koZ">
+                                <rect key="frame" x="50" y="480" width="275" height="34.5"/>
+                                <color key="backgroundColor" red="0.72437263259999995" green="0.64841165020000002" blue="0.36939309889999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ch6-dO-koZ" secondAttribute="height" multiplier="8:1" id="IVh-Dc-842"/>
+                                </constraints>
+                                <state key="normal" title="Slide-Right / Slide-Left"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapButtonSlideRightLeft:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pnZ-gj-3Kg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dialog Pattern" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mFK-93-uYi">
+                                <rect key="frame" x="133" y="40" width="109" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Qm-Fy-5fQ" firstAttribute="width" secondItem="6Qm-Fy-5fQ" secondAttribute="height" multiplier="12:1" id="14U-7E-2Wq"/>
+                            <constraint firstItem="Qt1-oZ-vVY" firstAttribute="width" secondItem="Qt1-oZ-vVY" secondAttribute="height" multiplier="12:1" id="1Cm-iM-Hls"/>
+                            <constraint firstItem="79q-sM-rG8" firstAttribute="leading" secondItem="XWI-WL-aId" secondAttribute="leading" id="561-eC-CUX"/>
+                            <constraint firstItem="fGg-Ka-hrO" firstAttribute="trailing" secondItem="79q-sM-rG8" secondAttribute="trailing" id="5Cj-kS-UES"/>
+                            <constraint firstItem="Qt1-oZ-vVY" firstAttribute="leading" secondItem="9Ar-EE-L5j" secondAttribute="leading" id="69V-5G-0Am"/>
+                            <constraint firstItem="XWI-WL-aId" firstAttribute="width" secondItem="XWI-WL-aId" secondAttribute="height" multiplier="100:17" id="BNA-ef-5cK"/>
+                            <constraint firstItem="fGg-Ka-hrO" firstAttribute="top" secondItem="79q-sM-rG8" secondAttribute="bottom" constant="10" id="BP2-Uk-oOc"/>
+                            <constraint firstItem="9Ar-EE-L5j" firstAttribute="trailing" secondItem="fGg-Ka-hrO" secondAttribute="trailing" id="DPB-D6-0Wr"/>
+                            <constraint firstItem="ch6-dO-koZ" firstAttribute="width" secondItem="ch6-dO-koZ" secondAttribute="height" multiplier="12:1" id="Fbg-ls-OHd"/>
+                            <constraint firstItem="ch6-dO-koZ" firstAttribute="top" secondItem="0Ap-Os-7Mx" secondAttribute="bottom" constant="10" id="Iqe-p2-uV6"/>
+                            <constraint firstItem="79q-sM-rG8" firstAttribute="trailing" secondItem="XWI-WL-aId" secondAttribute="trailing" id="Joi-pZ-sBr"/>
+                            <constraint firstItem="0Ap-Os-7Mx" firstAttribute="trailing" secondItem="6Qm-Fy-5fQ" secondAttribute="trailing" id="MZJ-VN-f9K"/>
+                            <constraint firstItem="79q-sM-rG8" firstAttribute="width" secondItem="79q-sM-rG8" secondAttribute="height" multiplier="12:1" id="Opl-0X-NIG"/>
+                            <constraint firstItem="ch6-dO-koZ" firstAttribute="leading" secondItem="0Ap-Os-7Mx" secondAttribute="leading" id="PGR-8D-NJC"/>
+                            <constraint firstItem="XWI-WL-aId" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="PPC-zF-dvI"/>
+                            <constraint firstItem="mFK-93-uYi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Q5e-tz-QMs"/>
+                            <constraint firstItem="Q2Z-nA-ikE" firstAttribute="leading" secondItem="Qt1-oZ-vVY" secondAttribute="leading" id="SAg-v3-nFK"/>
+                            <constraint firstItem="mFK-93-uYi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W7y-ZE-SPy"/>
+                            <constraint firstItem="XWI-WL-aId" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Y7y-fO-3K2"/>
+                            <constraint firstItem="6Qm-Fy-5fQ" firstAttribute="leading" secondItem="JO1-ng-vwb" secondAttribute="leading" id="d1w-qO-GFC"/>
+                            <constraint firstItem="6Qm-Fy-5fQ" firstAttribute="top" secondItem="JO1-ng-vwb" secondAttribute="bottom" constant="10" id="dW0-Cg-VnG"/>
+                            <constraint firstItem="JO1-ng-vwb" firstAttribute="leading" secondItem="Q2Z-nA-ikE" secondAttribute="leading" id="dZL-Xd-ipZ"/>
+                            <constraint firstItem="fGg-Ka-hrO" firstAttribute="leading" secondItem="79q-sM-rG8" secondAttribute="leading" id="fjq-ZF-mhs"/>
+                            <constraint firstItem="ch6-dO-koZ" firstAttribute="trailing" secondItem="0Ap-Os-7Mx" secondAttribute="trailing" id="g9c-7L-9GQ"/>
+                            <constraint firstItem="Q2Z-nA-ikE" firstAttribute="width" secondItem="Q2Z-nA-ikE" secondAttribute="height" multiplier="12:1" id="gVJ-9g-riF"/>
+                            <constraint firstItem="9Ar-EE-L5j" firstAttribute="width" secondItem="9Ar-EE-L5j" secondAttribute="height" multiplier="12:1" id="h44-ec-3fD"/>
+                            <constraint firstItem="Q2Z-nA-ikE" firstAttribute="trailing" secondItem="Qt1-oZ-vVY" secondAttribute="trailing" id="lHw-tS-iJj"/>
+                            <constraint firstItem="0Ap-Os-7Mx" firstAttribute="top" secondItem="6Qm-Fy-5fQ" secondAttribute="bottom" constant="10" id="mYg-fZ-179"/>
+                            <constraint firstItem="Qt1-oZ-vVY" firstAttribute="top" secondItem="9Ar-EE-L5j" secondAttribute="bottom" constant="10" id="oge-6S-my8"/>
+                            <constraint firstItem="JO1-ng-vwb" firstAttribute="width" secondItem="JO1-ng-vwb" secondAttribute="height" multiplier="12:1" id="olk-ek-LYJ"/>
+                            <constraint firstItem="0Ap-Os-7Mx" firstAttribute="width" secondItem="0Ap-Os-7Mx" secondAttribute="height" multiplier="12:1" id="p58-gG-YIU"/>
+                            <constraint firstItem="Q2Z-nA-ikE" firstAttribute="top" secondItem="Qt1-oZ-vVY" secondAttribute="bottom" constant="10" id="pHx-e9-EKw"/>
+                            <constraint firstItem="6Qm-Fy-5fQ" firstAttribute="trailing" secondItem="JO1-ng-vwb" secondAttribute="trailing" id="q0U-UZ-99d"/>
+                            <constraint firstItem="JO1-ng-vwb" firstAttribute="trailing" secondItem="Q2Z-nA-ikE" secondAttribute="trailing" id="tdw-hJ-e8X"/>
+                            <constraint firstItem="79q-sM-rG8" firstAttribute="top" secondItem="XWI-WL-aId" secondAttribute="bottom" constant="10" id="twe-Np-cEy"/>
+                            <constraint firstItem="0Ap-Os-7Mx" firstAttribute="leading" secondItem="6Qm-Fy-5fQ" secondAttribute="leading" id="uHx-Ea-cav"/>
+                            <constraint firstItem="XWI-WL-aId" firstAttribute="top" secondItem="mFK-93-uYi" secondAttribute="bottom" constant="20" id="uWr-Ru-CXT"/>
+                            <constraint firstItem="fGg-Ka-hrO" firstAttribute="width" secondItem="fGg-Ka-hrO" secondAttribute="height" multiplier="12:1" id="ubv-a5-DiL"/>
+                            <constraint firstItem="JO1-ng-vwb" firstAttribute="top" secondItem="Q2Z-nA-ikE" secondAttribute="bottom" constant="10" id="wh6-qA-NcW"/>
+                            <constraint firstItem="9Ar-EE-L5j" firstAttribute="leading" secondItem="fGg-Ka-hrO" secondAttribute="leading" id="xVP-sS-yEL"/>
+                            <constraint firstItem="Qt1-oZ-vVY" firstAttribute="trailing" secondItem="9Ar-EE-L5j" secondAttribute="trailing" id="zXM-g6-Kus"/>
+                            <constraint firstItem="9Ar-EE-L5j" firstAttribute="top" secondItem="fGg-Ka-hrO" secondAttribute="bottom" constant="10" id="zXZ-Rz-yGb"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BNA-ef-5cK"/>
+                                <exclude reference="Opl-0X-NIG"/>
+                                <exclude reference="ubv-a5-DiL"/>
+                                <exclude reference="h44-ec-3fD"/>
+                                <exclude reference="1Cm-iM-Hls"/>
+                                <exclude reference="gVJ-9g-riF"/>
+                                <exclude reference="olk-ek-LYJ"/>
+                                <exclude reference="14U-7E-2Wq"/>
+                                <exclude reference="p58-gG-YIU"/>
+                                <exclude reference="Fbg-ls-OHd"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'LSDialogViewController_Example' do
+  pod 'LSDialogViewController', :path => '../'
+
+  target 'LSDialogViewController_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
