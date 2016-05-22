@@ -6,6 +6,10 @@
 [![Platform](https://img.shields.io/cocoapods/p/LSDialogViewController.svg?style=flat)](http://cocoapods.org/pods/LSDialogViewController)
 
 
+`LSDialogViewController` is able to easily display a custom view as a dialog.
+
+![LSDialogViewController_animation](https://raw.github.com/wiki/daihase/resource_manage/gifs/LSDialogViewController_animation.gif)
+
 ## Installation
 
 ### From CocoaPods
