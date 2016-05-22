@@ -47,7 +47,7 @@ presentDialogViewController(
   completion: () -> Void                                // required
 )
 ```
-other background type.
+Other background view type. (.Gradient .None)
 
 ![Image][1]
 .
