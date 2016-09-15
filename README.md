@@ -44,7 +44,7 @@ presentDialogViewController(
   animationPattern: LSAnimationPattern,                 // default LSAnimationPattern.FadeInOut
   backgroundViewType: LSDialogBackgroundViewType,       // default LSDialogBackgroundViewType.Solid
   dismissButtonEnabled: Bool,                           // default true
-  completion: () -> Void                                // required
+  completion: (() -> Swift.Void)?                       // optional
 )
 ```
 Other background view type. (.Gradient .None)
