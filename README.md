@@ -10,6 +10,9 @@
 
 ![LSDialogViewController_animation](https://raw.github.com/wiki/daihase/resource_manage/gifs/LSDialogViewController_animation.gif)
 
+# Requirement
+- Swift3
+
 # Installation
 
 ### From CocoaPods
