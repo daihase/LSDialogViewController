@@ -76,6 +76,7 @@ public extension UIViewController {
         dismissButton.addTarget(self, action: #selector(UIViewController.tapLSDialogBackgroundView(_:)), for: .touchUpInside)
         dismissButton.isEnabled = dismissButtonEnabled
         
+        // add view.
         overlayView.addSubview(dismissButton)
         overlayView.addSubview(dialogView)
         sourceView.addSubview(overlayView)
