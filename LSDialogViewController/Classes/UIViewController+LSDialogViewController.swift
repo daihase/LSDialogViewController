@@ -35,7 +35,7 @@ public extension UIViewController {
         }
     }
     
-    func presentDialogViewController(dialogViewController: UIViewController, animationPattern: LSAnimationPattern = .FadeInOut, backgroundViewType: LSDialogBackgroundViewType = .Solid, dismissButtonEnabled: Bool = true, completion:() -> Void) {
+    func presentDialogViewController(_ dialogViewController: UIViewController, animationPattern: LSAnimationPattern = .fadeInOut, backgroundViewType: LSDialogBackgroundViewType = .solid, dismissButtonEnabled: Bool = true, completion:() -> Void) {
         
         // get the view of viewController that called the dialog.
         let sourceView: UIView = self.getSourceView()
@@ -44,7 +44,7 @@ public extension UIViewController {
         
         // dialog View.
         let dialogView: UIView = ls_dialogViewController!.view
-        dialogView.autoresizingMask = [.FlexibleBottomMargin, .FlexibleLeftMargin, .FlexibleTopMargin, .FlexibleRightMargin]
+        dialogView.autoresizingMask = [.flexibleBottomMargin, .flexibleLeftMargin, .flexibleTopMargin, .flexibleRightMargin]
         dialogView.alpha = 0.0
         dialogView.tag = LSDialogViewTag
         
@@ -53,14 +53,14 @@ public extension UIViewController {
         }
         
         let overlayView: UIView = UIView(frame: sourceView.bounds)
-        overlayView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        overlayView.backgroundColor = UIColor.clearColor()
+        overlayView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        overlayView.backgroundColor = UIColor.clear
         overlayView.tag = LSOverlayViewTag
         
         // background View.
         self.ls_dialogBackgroundView = LSDialogBackgroundView(frame: sourceView.bounds)
-        self.ls_dialogBackgroundView!.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        self.ls_dialogBackgroundView!.backgroundColor = UIColor.clearColor()
+        self.ls_dialogBackgroundView!.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.ls_dialogBackgroundView!.backgroundColor = UIColor.clear
         self.ls_dialogBackgroundView!.backgroundViewType = backgroundViewType
         self.ls_dialogBackgroundView!.alpha = 0.0
         if let _ = self.ls_dialogBackgroundView {
@@ -68,13 +68,13 @@ public extension UIViewController {
         }
         
         // dismiss button.
-        let dismissButton: UIButton = UIButton(type: .Custom)
-        dismissButton.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        dismissButton.backgroundColor = UIColor.clearColor()
+        let dismissButton: UIButton = UIButton(type: .custom)
+        dismissButton.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        dismissButton.backgroundColor = UIColor.clear
         dismissButton.frame = sourceView.bounds
-        dismissButton.tag = animationPattern == LSAnimationPattern.FadeInOut ? LSAnimationPattern.FadeInOut.rawValue : animationPattern.rawValue
-        dismissButton.addTarget(self, action: #selector(UIViewController.tapLSDialogBackgroundView(_:)), forControlEvents: .TouchUpInside)
-        dismissButton.enabled = dismissButtonEnabled
+        dismissButton.tag = animationPattern == LSAnimationPattern.fadeInOut ? LSAnimationPattern.fadeInOut.rawValue : animationPattern.rawValue
+        dismissButton.addTarget(self, action: #selector(UIViewController.tapLSDialogBackgroundView(_:)), for: .touchUpInside)
+        dismissButton.isEnabled = dismissButtonEnabled
         
         overlayView.addSubview(dismissButton)
         overlayView.addSubview(dialogView)
@@ -85,7 +85,7 @@ public extension UIViewController {
     }
     
     // close dialog.
-    func dismissDialogViewController(animationPattern: LSAnimationPattern = .FadeInOut) {
+    func dismissDialogViewController(_ animationPattern: LSAnimationPattern = .fadeInOut) {
         let sourceView: UIView = self.getSourceView()
         let dialogView: UIView = sourceView.viewWithTag(LSDialogViewTag)!
         let overlayView: UIView = sourceView.viewWithTag(LSOverlayViewTag)!
@@ -95,15 +95,15 @@ public extension UIViewController {
     }
     
     // Close the dialog by tapping the background.
-    func tapLSDialogBackgroundView(dismissButton: UIButton) {
+    func tapLSDialogBackgroundView(_ dismissButton: UIButton) {
         let animationPattern: LSAnimationPattern = LSAnimationPattern(rawValue: dismissButton.tag)!
         self.dismissDialogViewController(animationPattern)
     }
     
     func getSourceView() -> UIView {
         var sourceViewController: UIViewController = self
-        if let _ = sourceViewController.parentViewController {
-            sourceViewController = sourceViewController.parentViewController!
+        if let _ = sourceViewController.parent {
+            sourceViewController = sourceViewController.parent!
         }
         return sourceViewController.view
     }

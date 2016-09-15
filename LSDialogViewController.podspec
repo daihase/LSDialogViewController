@@ -26,17 +26,7 @@ You can easily display a dialog that has a variety of effects Using this library
   s.license          = 'MIT'
   s.author           = { "daihase" => "daisuke_hasegawa@librastudio.co.jp" }
   s.source           = { :git => "https://github.com/daihase/LSDialogViewController.git", :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/librastudio_jp'
-
+  s.social_media_url = 'https://twitter.com/librakinoko'
   s.ios.deployment_target = '8.0'
-
   s.source_files = 'LSDialogViewController/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'LSDialogViewController' => ['LSDialogViewController/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

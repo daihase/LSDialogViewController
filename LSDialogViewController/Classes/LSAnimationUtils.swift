@@ -10,19 +10,19 @@ import UIKit
 
 // Animation Pattern.
 public enum LSAnimationPattern: Int {
-    case FadeInOut
-    case ZoomInOut
-    case SlideBottomBottom
-    case SlideBottomTop
-    case SlideLeftLeft
-    case SlideLeftRight
-    case SlideTopTop
-    case SlideTopBottom
-    case SlideRightRight
-    case SlideRightLeft
+    case fadeInOut
+    case zoomInOut
+    case slideBottomBottom
+    case slideBottomTop
+    case slideLeftLeft
+    case slideLeftRight
+    case slideTopTop
+    case slideTopBottom
+    case slideRightRight
+    case slideRightLeft
 }
 
-public class LSAnimationUtils: NSObject {
+open class LSAnimationUtils: NSObject {
     
     weak var parentViewController: UIViewController?
     let animationDuration = 0.2
@@ -34,17 +34,17 @@ public class LSAnimationUtils: NSObject {
         return Static.instance
     }
     
-    func startAnimation(parentViewController: UIViewController, dialogView: UIView, sourceView: UIView, overlayView: UIView, animationPattern: LSAnimationPattern) {
+    func startAnimation(_ parentViewController: UIViewController, dialogView: UIView, sourceView: UIView, overlayView: UIView, animationPattern: LSAnimationPattern) {
         
         self.parentViewController = parentViewController
         
         switch animationPattern {
         // Slide Pattern.
-        case .SlideBottomBottom, .SlideBottomTop, .SlideLeftLeft, .SlideLeftRight, .SlideTopTop, .SlideTopBottom, .SlideRightRight, .SlideRightLeft:
+        case .slideBottomBottom, .slideBottomTop, .slideLeftLeft, .slideLeftRight, .slideTopTop, .slideTopBottom, .slideRightRight, .slideRightLeft:
             
             self.slideInAnimation(dialogView, sourceView: sourceView, overlayView: overlayView, animationPattern: animationPattern)
         // Zoom Pattern.
-        case .ZoomInOut:
+        case .zoomInOut:
             self.zoomInAnimation(dialogView, sourceView: sourceView, overlayView: overlayView)
         default:
             // Fade Pattern.
@@ -52,14 +52,14 @@ public class LSAnimationUtils: NSObject {
         }
     }
     
-    func endAnimation(dialogView: UIView, sourceView: UIView, overlayView: UIView, animationPattern: LSAnimationPattern) {
+    func endAnimation(_ dialogView: UIView, sourceView: UIView, overlayView: UIView, animationPattern: LSAnimationPattern) {
         
         switch animationPattern {
         // Slide Pattern.
-        case .SlideBottomBottom, .SlideBottomTop, .SlideLeftLeft, .SlideLeftRight, .SlideTopTop, .SlideTopBottom, .SlideRightRight, .SlideRightLeft:
+        case .slideBottomBottom, .slideBottomTop, .slideLeftLeft, .slideLeftRight, .slideTopTop, .slideTopBottom, .slideRightRight, .slideRightLeft:
             self.slideOutAnimation(dialogView, sourceView: sourceView, overlayView: overlayView, animationPattern: animationPattern)
         // Zoom Pattern.
-        case .ZoomInOut:
+        case .zoomInOut:
             self.zoomOutAnimation(dialogView, sourceView: sourceView, overlayView: overlayView)
         default:
             // Fade Pattern.
@@ -67,57 +67,57 @@ public class LSAnimationUtils: NSObject {
         }
     }
     
-    func slideInAnimation(dialogView: UIView, sourceView: UIView, overlayView: UIView, animationPattern: LSAnimationPattern) {
+    func slideInAnimation(_ dialogView: UIView, sourceView: UIView, overlayView: UIView, animationPattern: LSAnimationPattern) {
         
         let sourceSize: CGSize = sourceView.bounds.size
         let dialogSize: CGSize = dialogView.bounds.size
         var dialogStartRect:CGRect
         
         switch animationPattern {
-        case .SlideBottomTop, .SlideBottomBottom:
-            dialogStartRect = CGRectMake((sourceSize.width - dialogSize.width) / 2, sourceSize.height, dialogSize.width, dialogSize.height)
-        case .SlideLeftLeft, .SlideLeftRight:
-            dialogStartRect = CGRectMake(-sourceSize.width, (sourceSize.height - dialogSize.height) / 2, dialogSize.width, dialogSize.height)
-        case .SlideTopTop, .SlideTopBottom:
-            dialogStartRect = CGRectMake((sourceSize.width - dialogSize.width) / 2, -sourceSize.height, dialogSize.width, dialogSize.height)
+        case .slideBottomTop, .slideBottomBottom:
+            dialogStartRect = CGRect(x: (sourceSize.width - dialogSize.width) / 2, y: sourceSize.height, width: dialogSize.width, height: dialogSize.height)
+        case .slideLeftLeft, .slideLeftRight:
+            dialogStartRect = CGRect(x: -sourceSize.width, y: (sourceSize.height - dialogSize.height) / 2, width: dialogSize.width, height: dialogSize.height)
+        case .slideTopTop, .slideTopBottom:
+            dialogStartRect = CGRect(x: (sourceSize.width - dialogSize.width) / 2, y: -sourceSize.height, width: dialogSize.width, height: dialogSize.height)
         default:
-            dialogStartRect = CGRectMake(sourceSize.width, (sourceSize.height - dialogSize.height) / 2, dialogSize.width, dialogSize.height)
+            dialogStartRect = CGRect(x: sourceSize.width, y: (sourceSize.height - dialogSize.height) / 2, width: dialogSize.width, height: dialogSize.height)
         }
         
-        let dialogEndRect:CGRect = CGRectMake((sourceSize.width - dialogSize.width)/2, (sourceSize.height - dialogSize.height)/2, dialogSize.width, dialogSize.height)
+        let dialogEndRect:CGRect = CGRect(x: (sourceSize.width - dialogSize.width)/2, y: (sourceSize.height - dialogSize.height)/2, width: dialogSize.width, height: dialogSize.height)
         dialogView.frame = dialogStartRect
         dialogView.alpha = 1.0
-        UIView.animateWithDuration(animationDuration, animations: { () -> Void in
+        UIView.animate(withDuration: animationDuration, animations: { () -> Void in
             self.parentViewController?.ls_dialogViewController?.viewWillAppear(false)
             self.parentViewController?.ls_dialogBackgroundView?.alpha = 1.0
             dialogView.frame = dialogEndRect
-        }) { (finished) -> Void in
+        }, completion: { (finished) -> Void in
             self.parentViewController?.ls_dialogViewController?.viewDidAppear(false)
-        }
+        }) 
     }
     
-    func slideOutAnimation(dialogView: UIView, sourceView: UIView, overlayView: UIView, animationPattern: LSAnimationPattern) {
+    func slideOutAnimation(_ dialogView: UIView, sourceView: UIView, overlayView: UIView, animationPattern: LSAnimationPattern) {
         
         let sourceSize: CGSize = sourceView.bounds.size
         let dialogSize: CGSize = dialogView.bounds.size
         var dialogEndRect: CGRect
         
         switch animationPattern {
-        case .SlideBottomTop, .SlideTopTop:
-            dialogEndRect = CGRectMake((sourceSize.width - dialogSize.width) / 2, -dialogSize.height, dialogSize.width, dialogSize.height)
-        case .SlideBottomBottom, .SlideTopBottom:
-            dialogEndRect = CGRectMake((sourceSize.width - dialogSize.width)/2, dialogSize.height, dialogSize.width, dialogSize.height)
-        case .SlideLeftRight, .SlideRightRight:
-            dialogEndRect = CGRectMake(sourceSize.width, dialogView.frame.origin.y, dialogSize.width, dialogSize.height)
+        case .slideBottomTop, .slideTopTop:
+            dialogEndRect = CGRect(x: (sourceSize.width - dialogSize.width) / 2, y: -dialogSize.height, width: dialogSize.width, height: dialogSize.height)
+        case .slideBottomBottom, .slideTopBottom:
+            dialogEndRect = CGRect(x: (sourceSize.width - dialogSize.width)/2, y: dialogSize.height, width: dialogSize.width, height: dialogSize.height)
+        case .slideLeftRight, .slideRightRight:
+            dialogEndRect = CGRect(x: sourceSize.width, y: dialogView.frame.origin.y, width: dialogSize.width, height: dialogSize.height)
         default:
-            dialogEndRect = CGRectMake(-dialogSize.width, dialogView.frame.origin.y, dialogSize.width, dialogSize.height)
+            dialogEndRect = CGRect(x: -dialogSize.width, y: dialogView.frame.origin.y, width: dialogSize.width, height: dialogSize.height)
         }
         
-        UIView.animateWithDuration(0.2, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
             self.parentViewController?.ls_dialogBackgroundView?.alpha = 0.0
             dialogView.frame = dialogEndRect
         }) { (finished) -> Void in
-            UIView.animateWithDuration(self.animationDuration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+            UIView.animate(withDuration: self.animationDuration, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
                 self.parentViewController?.ls_dialogViewController?.viewWillDisappear(false)
                 
             }) { (finished) -> Void in
@@ -129,65 +129,65 @@ public class LSAnimationUtils: NSObject {
         }
     }
     
-    func fadeInAnimation(dialogView: UIView, sourceView: UIView, overlayView: UIView) {
+    func fadeInAnimation(_ dialogView: UIView, sourceView: UIView, overlayView: UIView) {
         let sourceSize: CGSize = sourceView.bounds.size
         let dialogSize: CGSize = dialogView.bounds.size
-        dialogView.frame = CGRectMake((sourceSize.width - dialogSize.width) / 2,
-                                      (sourceSize.height - dialogSize.height) / 2,
-                                      dialogSize.width,
-                                      dialogSize.height)
-        dialogView.transform = CGAffineTransformMakeScale(1.05, 1.05)
+        dialogView.frame = CGRect(x: (sourceSize.width - dialogSize.width) / 2,
+                                      y: (sourceSize.height - dialogSize.height) / 2,
+                                      width: dialogSize.width,
+                                      height: dialogSize.height)
+        dialogView.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
         dialogView.alpha = 0.0
         
-        UIView.animateWithDuration(animationDuration, animations: { () -> Void in
+        UIView.animate(withDuration: animationDuration, animations: { () -> Void in
             self.parentViewController?.ls_dialogViewController!.viewWillAppear(false)
             self.parentViewController?.ls_dialogBackgroundView!.alpha = 1.0
-            dialogView.transform = CGAffineTransformIdentity
+            dialogView.transform = CGAffineTransform.identity
             dialogView.alpha = 1.0
-        }) { (finished) -> Void in
+        }, completion: { (finished) -> Void in
             self.parentViewController?.ls_dialogViewController?.viewDidAppear(false)
-        }
+        }) 
     }
     
-    func fadeOutAnimation(dialogView: UIView, sourceView: UIView, overlayView: UIView) {
-        UIView.animateWithDuration(animationDuration, animations: { () -> Void in
+    func fadeOutAnimation(_ dialogView: UIView, sourceView: UIView, overlayView: UIView) {
+        UIView.animate(withDuration: animationDuration, animations: { () -> Void in
             self.parentViewController?.ls_dialogViewController?.viewDidDisappear(false)
             self.parentViewController?.ls_dialogBackgroundView?.alpha = 0.0
-            dialogView.transform = CGAffineTransformMakeScale(0.95, 0.95)
+            dialogView.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
             dialogView.alpha = 0.0
-        }) { (finished) -> Void in
+        }, completion: { (finished) -> Void in
             dialogView.removeFromSuperview()
             overlayView.removeFromSuperview()
             self.parentViewController?.ls_dialogViewController?.viewDidDisappear(false)
             self.parentViewController?.ls_dialogViewController = nil
-        }
+        }) 
     }
     
-    func zoomInAnimation(dialogView: UIView, sourceView: UIView, overlayView: UIView) {
+    func zoomInAnimation(_ dialogView: UIView, sourceView: UIView, overlayView: UIView) {
         let sourceSize: CGSize = sourceView.bounds.size
         let dialogSize: CGSize = dialogView.bounds.size
-        dialogView.frame = CGRectMake((sourceSize.width - dialogSize.width) / 2,
-                                      (sourceSize.height - dialogSize.height) / 2,
-                                      dialogSize.width,
-                                      dialogSize.height)
-        dialogView.transform = CGAffineTransformMakeScale(0.01, 0.01)
+        dialogView.frame = CGRect(x: (sourceSize.width - dialogSize.width) / 2,
+                                      y: (sourceSize.height - dialogSize.height) / 2,
+                                      width: dialogSize.width,
+                                      height: dialogSize.height)
+        dialogView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         dialogView.alpha = 0.0
         
-        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+        UIView.animate(withDuration: animationDuration, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
             self.parentViewController?.ls_dialogViewController?.viewWillAppear(false)
             self.parentViewController?.ls_dialogBackgroundView?.alpha = 1.0
-            dialogView.transform = CGAffineTransformIdentity
+            dialogView.transform = CGAffineTransform.identity
             dialogView.alpha = 1.0
         }) { (finished) -> Void in
             self.parentViewController?.ls_dialogViewController?.viewDidAppear(false)
         }
     }
     
-    func zoomOutAnimation(dialogView: UIView, sourceView: UIView, overlayView: UIView) {
-        UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+    func zoomOutAnimation(_ dialogView: UIView, sourceView: UIView, overlayView: UIView) {
+        UIView.animate(withDuration: animationDuration, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
             self.parentViewController?.ls_dialogViewController?.viewDidDisappear(false)
             self.parentViewController?.ls_dialogBackgroundView?.alpha = 0.0
-            dialogView.transform = CGAffineTransformMakeScale(0.01, 0.01)
+            dialogView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
             dialogView.alpha = 0.0
         }) { (finished) -> Void in
             dialogView.removeFromSuperview()

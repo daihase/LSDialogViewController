@@ -15,55 +15,55 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func tapButtonFadeInFadeOut(sender: AnyObject) {
-        self.showDialog(.FadeInOut)
+    @IBAction func tapButtonFadeInFadeOut(_ sender: AnyObject) {
+        self.showDialog(.fadeInOut)
     }
     
-    @IBAction func tapButtonZoomInZoomOut(sender: AnyObject) {
-        self.showDialog(.ZoomInOut)
+    @IBAction func tapButtonZoomInZoomOut(_ sender: AnyObject) {
+        self.showDialog(.zoomInOut)
     }
     
-    @IBAction func tapButtonSlideBottomBottom(sender: AnyObject) {
-        self.showDialog(.SlideBottomBottom)
+    @IBAction func tapButtonSlideBottomBottom(_ sender: AnyObject) {
+        self.showDialog(.slideBottomBottom)
     }
     
-    @IBAction func tapButtonSlideBottomTop(sender: AnyObject) {
-        self.showDialog(.SlideBottomTop)
+    @IBAction func tapButtonSlideBottomTop(_ sender: AnyObject) {
+        self.showDialog(.slideBottomTop)
     }
     
-    @IBAction func tapButtonSlideLeftLeft(sender: AnyObject) {
-        self.showDialog(.SlideLeftLeft)
+    @IBAction func tapButtonSlideLeftLeft(_ sender: AnyObject) {
+        self.showDialog(.slideLeftLeft)
     }
     
-    @IBAction func tapButtonSlideLeftRight(sender: AnyObject) {
-        self.showDialog(.SlideLeftRight)
+    @IBAction func tapButtonSlideLeftRight(_ sender: AnyObject) {
+        self.showDialog(.slideLeftRight)
     }
     
-    @IBAction func tapButtonSlideTopTop(sender: AnyObject) {
-        self.showDialog(.SlideTopTop)
+    @IBAction func tapButtonSlideTopTop(_ sender: AnyObject) {
+        self.showDialog(.slideTopTop)
     }
     
-    @IBAction func tapButtonSlideTopBottom(sender: AnyObject) {
-        self.showDialog(.SlideTopBottom)
+    @IBAction func tapButtonSlideTopBottom(_ sender: AnyObject) {
+        self.showDialog(.slideTopBottom)
         
     }
     
-    @IBAction func tapButtonSlideRightRight(sender: AnyObject) {
-        self.showDialog(.SlideRightRight)
+    @IBAction func tapButtonSlideRightRight(_ sender: AnyObject) {
+        self.showDialog(.slideRightRight)
     }
     
-    @IBAction func tapButtonSlideRightLeft(sender: AnyObject) {
-        self.showDialog(.SlideRightLeft)
+    @IBAction func tapButtonSlideRightLeft(_ sender: AnyObject) {
+        self.showDialog(.slideRightLeft)
     }
     
-    private func showDialog(animationPattern: LSAnimationPattern) {
+    fileprivate func showDialog(_ animationPattern: LSAnimationPattern) {
         let dialogViewController = CustomDialogViewController(nibName: "CustomDialog", bundle: nil)
         dialogViewController.delegate = self
         self.presentDialogViewController(dialogViewController, animationPattern: animationPattern, completion: {() -> Void in})
     }
     
     func dismissDialog() {
-        self.dismissDialogViewController(LSAnimationPattern.FadeInOut)
+        self.dismissDialogViewController(LSAnimationPattern.fadeInOut)
     }
     
     override func didReceiveMemoryWarning() {
