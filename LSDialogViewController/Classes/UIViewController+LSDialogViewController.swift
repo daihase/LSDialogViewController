@@ -35,7 +35,7 @@ public extension UIViewController {
         }
     }
     
-    func presentDialogViewController(_ dialogViewController: UIViewController, animationPattern: LSAnimationPattern = .fadeInOut, backgroundViewType: LSDialogBackgroundViewType = .solid, dismissButtonEnabled: Bool = true, completion:() -> Void) {
+    func presentDialogViewController(_ dialogViewController: UIViewController, animationPattern: LSAnimationPattern = .fadeInOut, backgroundViewType: LSDialogBackgroundViewType = .solid, dismissButtonEnabled: Bool = true, completion: (() -> Swift.Void)? = nil) {
         
         // get the view of viewController that called the dialog.
         let sourceView: UIView = self.getSourceView()
@@ -82,7 +82,10 @@ public extension UIViewController {
         
         // set animation pattern and call.
         LSAnimationUtils.sharedInstance.startAnimation(self, dialogView: dialogView, sourceView: sourceView, overlayView: overlayView, animationPattern: animationPattern)
-    }
+        
+        // called after the dialog display.
+        completion?()
+   }
     
     // close dialog.
     func dismissDialogViewController(_ animationPattern: LSAnimationPattern = .fadeInOut) {

@@ -59,7 +59,7 @@ class ViewController: UIViewController {
     fileprivate func showDialog(_ animationPattern: LSAnimationPattern) {
         let dialogViewController = CustomDialogViewController(nibName: "CustomDialog", bundle: nil)
         dialogViewController.delegate = self
-        self.presentDialogViewController(dialogViewController, animationPattern: animationPattern, completion: {() -> Void in})
+        self.presentDialogViewController(dialogViewController, animationPattern: animationPattern)
     }
     
     func dismissDialog() {
