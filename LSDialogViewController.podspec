@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "LSDialogViewController"
-  s.version          = "0.1.2"
+  s.version          = "0.1.7"
   s.summary          = "This ViewController is able to easily display a custom view as a dialog."
 
 # This description is used to generate tags and improve search results.
