@@ -1,5 +1,5 @@
 PODS:
-  - LSDialogViewController (0.1.3)
+  - LSDialogViewController (0.1.5)
 
 DEPENDENCIES:
   - LSDialogViewController (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  LSDialogViewController: f05daab5ce0b4cc5c1887349eea80d121c5d7b22
+  LSDialogViewController: 7e3df09600305e41c08358c348828a3be11b6a6a
 
 PODFILE CHECKSUM: f9169fd7ec329cc3a8743750da4b2886782727d0
 
