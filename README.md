@@ -11,7 +11,8 @@
 ![LSDialogViewController_animation](https://raw.github.com/wiki/daihase/resource_manage/gifs/LSDialogViewController_animation.gif)
 
 # Requirement
-- Swift3
+- Swift 2+
+- iOS 8.0+
 
 # Installation
 
@@ -21,7 +22,11 @@ LSDialogViewController is available through [CocoaPods](http://cocoapods.org). T
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "LSDialogViewController"
+# for Swift 3
+pod 'LSDialogViewController', '~> 0.1.9'
+
+# for Swift 2
+pod 'LSDialogViewController', '0.1.0'
 ```
 # Usage
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -43,11 +48,16 @@ self.dismissDialogViewController(animationPattern)
 # Configuration
 ```swift
 presentDialogViewController(
-  dialogViewController: :UIViewController,              // required
-  animationPattern: LSAnimationPattern,                 // default LSAnimationPattern.FadeInOut
-  backgroundViewType: LSDialogBackgroundViewType,       // default LSDialogBackgroundViewType.Solid
-  dismissButtonEnabled: Bool,                           // default true
-  completion: (() -> Swift.Void)?                       // optional
+  // required
+  dialogViewController: :UIViewController,
+  // default LSAnimationPattern.FadeInOut
+  animationPattern: LSAnimationPattern,
+  // default LSDialogBackgroundViewType.Solid
+  backgroundViewType: LSDialogBackgroundViewType,
+  // default true
+  dismissButtonEnabled: Bool,
+  // optional
+  completion: (() -> Swift.Void)?
 )
 ```
 Other background view type. (.Gradient .None)
