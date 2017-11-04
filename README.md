@@ -24,7 +24,7 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 # for Swift 4
-pod 'LSDialogViewController', '~> 2.0.0'
+pod 'LSDialogViewController', '~> 1.0.0'
 
 # for Swift 3
 pod 'LSDialogViewController', '~> 0.1.9'
