@@ -1,9 +1,10 @@
 # LSDialogViewController
 
-[![CI Status](http://img.shields.io/travis/daihase/LSDialogViewController.svg?style=flat)](https://travis-ci.org/daihase/LSDialogViewController)
-[![Version](https://img.shields.io/cocoapods/v/LSDialogViewController.svg?style=flat)](http://cocoapods.org/pods/LSDialogViewController)
+[![Build Status](https://travis-ci.org/daihase/LSDialogViewController.svg?branch=master)](https://travis-ci.org/daihase/LSDialogViewController)
+[![Language](https://img.shields.io/badge/language-Swift%204-orange.svg)]()
 [![License](https://img.shields.io/cocoapods/l/LSDialogViewController.svg?style=flat)](http://cocoapods.org/pods/LSDialogViewController)
 [![Platform](https://img.shields.io/cocoapods/p/LSDialogViewController.svg?style=flat)](http://cocoapods.org/pods/LSDialogViewController)
+[![CocoaPodsDL](https://img.shields.io/badge/Cocoa%20Pods-%E2%9C%93-4BC51D.svg?style=flat)](https://cocoapods.org/pods/LSDialogViewController)
 
 
 `LSDialogViewController` is able to easily display a custom view as a dialog.
@@ -22,6 +23,9 @@ LSDialogViewController is available through [CocoaPods](http://cocoapods.org). T
 it, simply add the following line to your Podfile:
 
 ```ruby
+# for Swift 4
+pod 'LSDialogViewController', '~> 2.0.0'
+
 # for Swift 3
 pod 'LSDialogViewController', '~> 0.1.9'
 
