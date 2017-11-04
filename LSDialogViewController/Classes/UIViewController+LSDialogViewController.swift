@@ -99,7 +99,7 @@ public extension UIViewController {
     }
     
     // Close the dialog by tapping the background.
-    func tapLSDialogBackgroundView(_ dismissButton: UIButton) {
+    @objc func tapLSDialogBackgroundView(_ dismissButton: UIButton) {
         let animationPattern: LSAnimationPattern = LSAnimationPattern(rawValue: dismissButton.tag)!
         self.dismissDialogViewController(animationPattern)
     }
