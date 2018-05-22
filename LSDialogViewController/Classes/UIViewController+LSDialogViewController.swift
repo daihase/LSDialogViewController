@@ -104,10 +104,10 @@ public extension UIViewController {
     }
     
     func getSourceView() -> UIView {
-        var sourceViewController: UIViewController = self
-        if let _ = sourceViewController.parent {
-            sourceViewController = sourceViewController.parent!
-        }
+        var sourceViewController = self
+        guard let parent = sourceViewController.parent else { return sourceViewController.view}
+        sourceViewController = parent
+        
         return sourceViewController.view
     }
 }
