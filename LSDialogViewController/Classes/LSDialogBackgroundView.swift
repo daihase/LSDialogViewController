@@ -41,18 +41,18 @@ open class LSDialogBackgroundView: UIView {
     
     fileprivate func drawBackgroundViewWihGradient() {
         // CoreGraphics get CGContext
-        let context: CGContext = UIGraphicsGetCurrentContext()!
+        let context = UIGraphicsGetCurrentContext()!
         let colors: [CGFloat] = [0.0, 0.0, 0.0 ,0.0 ,0.0 ,0.0 ,0.0 ,0.75]
-        let colorsCount: Int = 2
+        let colorsCount = 2
         let colorsLocation: [CGFloat] = [0.0, 1.0]
-        let space: CGColorSpace = CGColorSpaceCreateDeviceRGB()
-        let gradient: CGGradient = CGGradient(colorSpace: space, colorComponents: colors, locations: colorsLocation, count: colorsCount)!
+        let space = CGColorSpaceCreateDeviceRGB()
+        let gradient = CGGradient(colorSpace: space, colorComponents: colors, locations: colorsLocation, count: colorsCount)!
         
         // set position
-        let startCenter: CGPoint = CGPoint(x: self.bounds.size.width / 2, y: self.bounds.size.height / 2)
+        let startCenter = CGPoint(x: self.bounds.size.width / 2, y: self.bounds.size.height / 2)
         let endCenter = startCenter
         let startRadius: CGFloat = 0.0
-        let endRadius: CGFloat = min(self.bounds.size.width as CGFloat, self.bounds.size.height as CGFloat)
+        let endRadius = min(self.bounds.size.width as CGFloat, self.bounds.size.height as CGFloat)
         
         context.drawRadialGradient(gradient, startCenter: startCenter, startRadius: startRadius, endCenter: endCenter, endRadius: endRadius, options: CGGradientDrawingOptions.drawsAfterEndLocation)
     }
@@ -62,8 +62,8 @@ open class LSDialogBackgroundView: UIView {
         let rect = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
         
         //color set
-        context?.setFillColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5);
-        context?.addRect(rect);
-        context?.fillPath();
+        context?.setFillColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5)
+        context?.addRect(rect)
+        context?.fillPath()
     }
 }
