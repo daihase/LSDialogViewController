@@ -81,7 +81,7 @@ public extension UIViewController {
         sourceView.addSubview(overlayView)
         
         // set animation pattern and call
-        LSAnimationUtils.sharedInstance.startAnimation(self, dialogView: dialogView, sourceView: sourceView, overlayView: overlayView, animationPattern: animationPattern)
+        LSAnimationUtils.shared.startAnimation(self, dialogView: dialogView, sourceView: sourceView, overlayView: overlayView, animationPattern: animationPattern)
         
         // called after the dialog display
         completion?()
@@ -94,7 +94,7 @@ public extension UIViewController {
         let overlayView = sourceView.viewWithTag(LSOverlayViewTag)!
         
         // set animation pattern and call
-        LSAnimationUtils.sharedInstance.endAnimation(dialogView, sourceView: sourceView, overlayView: overlayView, animationPattern: animationPattern)
+        LSAnimationUtils.shared.endAnimation(dialogView, sourceView: sourceView, overlayView: overlayView, animationPattern: animationPattern)
     }
     
     // Close the dialog by tapping the background

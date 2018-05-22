@@ -22,17 +22,11 @@ public enum LSAnimationPattern: Int {
     case slideRightLeft
 }
 
-open class LSAnimationUtils: NSObject {
-    
+open class LSAnimationUtils {
     weak var parentViewController: UIViewController?
-    let animationDuration = 0.2
-    
-    class var sharedInstance : LSAnimationUtils {
-        struct Static {
-            static let instance : LSAnimationUtils = LSAnimationUtils()
-        }
-        return Static.instance
-    }
+    open var animationDuration = 0.2
+    static let shared = LSAnimationUtils()
+    private init() {}
     
     open func startAnimation(_ parentViewController: UIViewController, dialogView: UIView, sourceView: UIView, overlayView: UIView, animationPattern: LSAnimationPattern) {
         
