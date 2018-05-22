@@ -107,11 +107,11 @@ open class LSAnimationUtils {
             dialogEndRect = CGRect(x: -dialogSize.width, y: dialogView.frame.origin.y, width: dialogSize.width, height: dialogSize.height)
         }
         
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
+        UIView.animate(withDuration: animationDuration, delay: 0.0, options: .curveEaseIn, animations: { () -> Void in
             self.parentViewController?.ls_dialogBackgroundView?.alpha = 0.0
             dialogView.frame = dialogEndRect
         }) { (finished) -> Void in
-            UIView.animate(withDuration: self.animationDuration, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
+            UIView.animate(withDuration: self.animationDuration, delay: 0.0, options: .curveEaseIn, animations: { () -> Void in
                 self.parentViewController?.ls_dialogViewController?.viewWillDisappear(false)
                 
             }) { (finished) -> Void in
