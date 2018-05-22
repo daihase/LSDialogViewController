@@ -8,7 +8,7 @@
 
 import UIKit
 
-// Animation Pattern.
+// Animation Pattern
 public enum LSAnimationPattern: Int {
     case fadeInOut
     case zoomInOut
@@ -39,15 +39,15 @@ open class LSAnimationUtils: NSObject {
         self.parentViewController = parentViewController
         
         switch animationPattern {
-        // Slide Pattern.
+        // Slide Pattern
         case .slideBottomBottom, .slideBottomTop, .slideLeftLeft, .slideLeftRight, .slideTopTop, .slideTopBottom, .slideRightRight, .slideRightLeft:
             
             self.slideInAnimation(dialogView, sourceView: sourceView, overlayView: overlayView, animationPattern: animationPattern)
-        // Zoom Pattern.
+        // Zoom Pattern
         case .zoomInOut:
             self.zoomInAnimation(dialogView, sourceView: sourceView, overlayView: overlayView)
         default:
-            // Fade Pattern.
+            // Fade Pattern
             self.fadeInAnimation(dialogView, sourceView: sourceView, overlayView: overlayView)
         }
     }
@@ -55,14 +55,14 @@ open class LSAnimationUtils: NSObject {
     open func endAnimation(_ dialogView: UIView, sourceView: UIView, overlayView: UIView, animationPattern: LSAnimationPattern) {
         
         switch animationPattern {
-        // Slide Pattern.
+        // Slide Pattern
         case .slideBottomBottom, .slideBottomTop, .slideLeftLeft, .slideLeftRight, .slideTopTop, .slideTopBottom, .slideRightRight, .slideRightLeft:
             self.slideOutAnimation(dialogView, sourceView: sourceView, overlayView: overlayView, animationPattern: animationPattern)
-        // Zoom Pattern.
+        // Zoom Pattern
         case .zoomInOut:
             self.zoomOutAnimation(dialogView, sourceView: sourceView, overlayView: overlayView)
         default:
-            // Fade Pattern.
+            // Fade Pattern
             self.fadeOutAnimation(dialogView, sourceView: sourceView, overlayView: overlayView)
         }
     }

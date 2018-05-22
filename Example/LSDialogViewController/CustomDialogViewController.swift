@@ -16,7 +16,7 @@ class CustomDialogViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    // close dialogView.
+    // close dialogView
     @IBAction func closeButton(_ sender: AnyObject) {
         self.delegate?.dismissDialog()
     }

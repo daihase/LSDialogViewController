@@ -15,7 +15,6 @@ public enum LSDialogBackgroundViewType {
 }
 
 open class LSDialogBackgroundView: UIView {
-    
     var backgroundViewType: LSDialogBackgroundViewType?
     
     override init(frame: CGRect) {
@@ -28,7 +27,6 @@ open class LSDialogBackgroundView: UIView {
     
     override open func draw(_ rect: CGRect) {
         super.draw(rect)
-        
         if let type = self.backgroundViewType {
             switch type {
             case .solid:
@@ -42,7 +40,7 @@ open class LSDialogBackgroundView: UIView {
     }
     
     fileprivate func drawBackgroundViewWihGradient() {
-        // CoreGraphics get CGContext.
+        // CoreGraphics get CGContext
         let context: CGContext = UIGraphicsGetCurrentContext()!
         let colors: [CGFloat] = [0.0, 0.0, 0.0 ,0.0 ,0.0 ,0.0 ,0.0 ,0.75]
         let colorsCount: Int = 2
@@ -50,25 +48,22 @@ open class LSDialogBackgroundView: UIView {
         let space: CGColorSpace = CGColorSpaceCreateDeviceRGB()
         let gradient: CGGradient = CGGradient(colorSpace: space, colorComponents: colors, locations: colorsLocation, count: colorsCount)!
         
-        // set position.
+        // set position
         let startCenter: CGPoint = CGPoint(x: self.bounds.size.width / 2, y: self.bounds.size.height / 2)
         let endCenter = startCenter
         let startRadius: CGFloat = 0.0
         let endRadius: CGFloat = min(self.bounds.size.width as CGFloat, self.bounds.size.height as CGFloat)
         
-        // to gradiation.
         context.drawRadialGradient(gradient, startCenter: startCenter, startRadius: startRadius, endCenter: endCenter, endRadius: endRadius, options: CGGradientDrawingOptions.drawsAfterEndLocation)
     }
     
     fileprivate func drawBackgroundViewWithSolid() {
-        
         let context = UIGraphicsGetCurrentContext()
         let rect = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
         
-        //color set.
+        //color set
         context?.setFillColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.5);
         context?.addRect(rect);
         context?.fillPath();
     }
 }
-
