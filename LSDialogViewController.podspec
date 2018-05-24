@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "LSDialogViewController"
-  s.version          = "1.0.0"
+  s.version          = "2.0.0"
   s.summary          = "This ViewController is able to easily display a custom view as a dialog."
 
 # This description is used to generate tags and improve search results.
@@ -26,7 +26,7 @@ You can easily display a dialog that has a variety of effects Using this library
   s.license          = 'MIT'
   s.author           = { "daihase" => "daisuke_hasegawa@librastudio.co.jp" }
   s.source           = { :git => "https://github.com/daihase/LSDialogViewController.git", :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/librakinoko'
-  s.ios.deployment_target = '8.0'
+  s.social_media_url = 'https://twitter.com/hasse_88'
+  s.ios.deployment_target = '8.3'
   s.source_files = 'LSDialogViewController/Classes/**/*'
 end
