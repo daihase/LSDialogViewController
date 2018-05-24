@@ -8,7 +8,7 @@ xcode_project: LSDialogViewController.xcodeproj
 xcode_scheme: LSDialogViewController
 branches:
   only:
-    - mastere
+    - master
 script:
 - xcodebuild -scheme ios-travis -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=10.1,name=iPhone 7' -configuration Debug test | xcpretty -c
-- pod lib lint --allow-warningst
+- pod lib lint --allow-warnings
