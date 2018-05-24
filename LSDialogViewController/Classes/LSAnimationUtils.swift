@@ -29,13 +29,17 @@ open class LSAnimationUtils {
     private init() {}
     
     open func startAnimation(_ parentViewController: UIViewController, dialogView: UIView, sourceView: UIView, overlayView: UIView, animationPattern: LSAnimationPattern) {
-        
         self.parentViewController = parentViewController
-        
-        switch animationPattern {
         // Slide Pattern
-        case .slideBottomBottom, .slideBottomTop, .slideLeftLeft, .slideLeftRight, .slideTopTop, .slideTopBottom, .slideRightRight, .slideRightLeft:
-            
+        switch animationPattern {
+        case .slideBottomBottom,
+             .slideBottomTop,
+             .slideLeftLeft,
+             .slideLeftRight,
+             .slideTopTop,
+             .slideTopBottom,
+             .slideRightRight,
+             .slideRightLeft:
             self.slideInAnimation(dialogView, sourceView: sourceView, overlayView: overlayView, animationPattern: animationPattern)
         // Zoom Pattern
         case .zoomInOut:
@@ -47,10 +51,16 @@ open class LSAnimationUtils {
     }
     
     open func endAnimation(_ dialogView: UIView, sourceView: UIView, overlayView: UIView, animationPattern: LSAnimationPattern) {
-        
         switch animationPattern {
         // Slide Pattern
-        case .slideBottomBottom, .slideBottomTop, .slideLeftLeft, .slideLeftRight, .slideTopTop, .slideTopBottom, .slideRightRight, .slideRightLeft:
+        case .slideBottomBottom,
+             .slideBottomTop,
+             .slideLeftLeft,
+             .slideLeftRight,
+             .slideTopTop,
+             .slideTopBottom,
+             .slideRightRight,
+             .slideRightLeft:
             self.slideOutAnimation(dialogView, sourceView: sourceView, overlayView: overlayView, animationPattern: animationPattern)
         // Zoom Pattern
         case .zoomInOut:
@@ -62,46 +72,50 @@ open class LSAnimationUtils {
     }
     
     open func slideInAnimation(_ dialogView: UIView, sourceView: UIView, overlayView: UIView, animationPattern: LSAnimationPattern) {
-        
-        let sourceSize: CGSize = sourceView.bounds.size
-        let dialogSize: CGSize = dialogView.bounds.size
-        var dialogStartRect:CGRect
+        let sourceSize = sourceView.bounds.size
+        let dialogSize = dialogView.bounds.size
+        var dialogStartRect: CGRect
         
         switch animationPattern {
-        case .slideBottomTop, .slideBottomBottom:
+        case .slideBottomTop,
+             .slideBottomBottom:
             dialogStartRect = CGRect(x: (sourceSize.width - dialogSize.width) / 2, y: sourceSize.height, width: dialogSize.width, height: dialogSize.height)
-        case .slideLeftLeft, .slideLeftRight:
+        case .slideLeftLeft,
+             .slideLeftRight:
             dialogStartRect = CGRect(x: -sourceSize.width, y: (sourceSize.height - dialogSize.height) / 2, width: dialogSize.width, height: dialogSize.height)
-        case .slideTopTop, .slideTopBottom:
+        case .slideTopTop,
+             .slideTopBottom:
             dialogStartRect = CGRect(x: (sourceSize.width - dialogSize.width) / 2, y: -sourceSize.height, width: dialogSize.width, height: dialogSize.height)
         default:
             dialogStartRect = CGRect(x: sourceSize.width, y: (sourceSize.height - dialogSize.height) / 2, width: dialogSize.width, height: dialogSize.height)
         }
         
-        let dialogEndRect:CGRect = CGRect(x: (sourceSize.width - dialogSize.width)/2, y: (sourceSize.height - dialogSize.height)/2, width: dialogSize.width, height: dialogSize.height)
+        let dialogEndRect = CGRect(x: (sourceSize.width - dialogSize.width) / 2, y: (sourceSize.height - dialogSize.height) / 2, width: dialogSize.width, height: dialogSize.height)
         dialogView.frame = dialogStartRect
         dialogView.alpha = 1.0
         UIView.animate(withDuration: animationDuration, animations: { () -> Void in
             self.parentViewController?.ls_dialogViewController?.viewWillAppear(false)
             self.parentViewController?.ls_dialogBackgroundView?.alpha = 1.0
             dialogView.frame = dialogEndRect
-            }, completion: { (finished) -> Void in
-                self.parentViewController?.ls_dialogViewController?.viewDidAppear(false)
+        }, completion: { (finished) -> Void in
+            self.parentViewController?.ls_dialogViewController?.viewDidAppear(false)
         })
     }
     
     open func slideOutAnimation(_ dialogView: UIView, sourceView: UIView, overlayView: UIView, animationPattern: LSAnimationPattern) {
-        
-        let sourceSize: CGSize = sourceView.bounds.size
-        let dialogSize: CGSize = dialogView.bounds.size
+        let sourceSize = sourceView.bounds.size
+        let dialogSize = dialogView.bounds.size
         var dialogEndRect: CGRect
         
         switch animationPattern {
-        case .slideBottomTop, .slideTopTop:
+        case .slideBottomTop,
+             .slideTopTop:
             dialogEndRect = CGRect(x: (sourceSize.width - dialogSize.width) / 2, y: -dialogSize.height, width: dialogSize.width, height: dialogSize.height)
-        case .slideBottomBottom, .slideTopBottom:
-            dialogEndRect = CGRect(x: (sourceSize.width - dialogSize.width)/2, y: dialogSize.height, width: dialogSize.width, height: dialogSize.height)
-        case .slideLeftRight, .slideRightRight:
+        case .slideBottomBottom,
+             .slideTopBottom:
+            dialogEndRect = CGRect(x: (sourceSize.width - dialogSize.width) / 2, y: dialogSize.height, width: dialogSize.width, height: dialogSize.height)
+        case .slideLeftRight,
+             .slideRightRight:
             dialogEndRect = CGRect(x: sourceSize.width, y: dialogView.frame.origin.y, width: dialogSize.width, height: dialogSize.height)
         default:
             dialogEndRect = CGRect(x: -dialogSize.width, y: dialogView.frame.origin.y, width: dialogSize.width, height: dialogSize.height)
@@ -113,7 +127,6 @@ open class LSAnimationUtils {
         }) { (finished) -> Void in
             UIView.animate(withDuration: self.animationDuration, delay: 0.0, options: .curveEaseIn, animations: { () -> Void in
                 self.parentViewController?.ls_dialogViewController?.viewWillDisappear(false)
-                
             }) { (finished) -> Void in
                 dialogView.removeFromSuperview()
                 overlayView.removeFromSuperview()
@@ -124,8 +137,8 @@ open class LSAnimationUtils {
     }
     
     open func fadeInAnimation(_ dialogView: UIView, sourceView: UIView, overlayView: UIView) {
-        let sourceSize: CGSize = sourceView.bounds.size
-        let dialogSize: CGSize = dialogView.bounds.size
+        let sourceSize = sourceView.bounds.size
+        let dialogSize = dialogView.bounds.size
         dialogView.frame = CGRect(x: (sourceSize.width - dialogSize.width) / 2,
                                   y: (sourceSize.height - dialogSize.height) / 2,
                                   width: dialogSize.width,
@@ -158,8 +171,8 @@ open class LSAnimationUtils {
     }
     
     open func zoomInAnimation(_ dialogView: UIView, sourceView: UIView, overlayView: UIView) {
-        let sourceSize: CGSize = sourceView.bounds.size
-        let dialogSize: CGSize = dialogView.bounds.size
+        let sourceSize = sourceView.bounds.size
+        let dialogSize = dialogView.bounds.size
         dialogView.frame = CGRect(x: (sourceSize.width - dialogSize.width) / 2,
                                   y: (sourceSize.height - dialogSize.height) / 2,
                                   width: dialogSize.width,
