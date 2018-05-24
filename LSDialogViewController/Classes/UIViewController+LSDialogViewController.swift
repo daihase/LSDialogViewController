@@ -35,7 +35,6 @@ public extension UIViewController {
     }
     
     func presentDialogViewController(_ dialogViewController: UIViewController, animationPattern: LSAnimationPattern = .fadeInOut, backgroundViewType: LSDialogBackgroundViewType = .solid, dismissButtonEnabled: Bool = true, completion: (() -> Swift.Void)? = nil) {
-        
         // get the view of viewController that called the dialog
         let sourceView = self.getSourceView()
         self.ls_dialogViewController = dialogViewController

@@ -46,7 +46,6 @@ open class LSDialogBackgroundView: UIView {
         let colorsLocation: [CGFloat] = [0.0, 1.0]
         let space = CGColorSpaceCreateDeviceRGB()
         let gradient = CGGradient(colorSpace: space, colorComponents: colors, locations: colorsLocation, count: colorsCount)!
-        
         let startCenter = CGPoint(x: self.bounds.size.width / 2, y: self.bounds.size.height / 2)
         let endCenter = startCenter
         let startRadius: CGFloat = 0.0

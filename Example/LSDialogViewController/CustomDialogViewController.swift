@@ -9,7 +9,6 @@
 import UIKit
 
 class CustomDialogViewController: UIViewController {
-
     var delegate: ViewController?
     
     override func viewDidLoad() {
