@@ -16,54 +16,54 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapButtonFadeInFadeOut(_ sender: AnyObject) {
-        self.showDialog(.fadeInOut)
+        showDialog(.fadeInOut)
     }
     
     @IBAction func tapButtonZoomInZoomOut(_ sender: AnyObject) {
-        self.showDialog(.zoomInOut)
+        showDialog(.zoomInOut)
     }
     
     @IBAction func tapButtonSlideBottomBottom(_ sender: AnyObject) {
-        self.showDialog(.slideBottomBottom)
+        showDialog(.slideBottomBottom)
     }
     
     @IBAction func tapButtonSlideBottomTop(_ sender: AnyObject) {
-        self.showDialog(.slideBottomTop)
+        showDialog(.slideBottomTop)
     }
     
     @IBAction func tapButtonSlideLeftLeft(_ sender: AnyObject) {
-        self.showDialog(.slideLeftLeft)
+        showDialog(.slideLeftLeft)
     }
     
     @IBAction func tapButtonSlideLeftRight(_ sender: AnyObject) {
-        self.showDialog(.slideLeftRight)
+        showDialog(.slideLeftRight)
     }
     
     @IBAction func tapButtonSlideTopTop(_ sender: AnyObject) {
-        self.showDialog(.slideTopTop)
+        showDialog(.slideTopTop)
     }
     
     @IBAction func tapButtonSlideTopBottom(_ sender: AnyObject) {
-        self.showDialog(.slideTopBottom)
-        
+        showDialog(.slideTopBottom)
     }
     
     @IBAction func tapButtonSlideRightRight(_ sender: AnyObject) {
-        self.showDialog(.slideRightRight)
+        showDialog(.slideRightRight)
     }
     
     @IBAction func tapButtonSlideRightLeft(_ sender: AnyObject) {
-        self.showDialog(.slideRightLeft)
+        showDialog(.slideRightLeft)
     }
     
     fileprivate func showDialog(_ animationPattern: LSAnimationPattern) {
         let dialogViewController = CustomDialogViewController(nibName: "CustomDialog", bundle: nil)
         dialogViewController.delegate = self
-        self.presentDialogViewController(dialogViewController, animationPattern: animationPattern)
+        
+        presentDialogViewController(dialogViewController, animationPattern: animationPattern)
     }
     
     func dismissDialog() {
-        self.dismissDialogViewController(LSAnimationPattern.fadeInOut)
+        dismissDialogViewController(LSAnimationPattern.fadeInOut)
     }
     
     override func didReceiveMemoryWarning() {

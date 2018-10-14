@@ -180,7 +180,7 @@ open class LSAnimationUtils {
         dialogView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
         dialogView.alpha = 0.0
         
-        UIView.animate(withDuration: animationDuration, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
+        UIView.animate(withDuration: animationDuration, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: { () -> Void in
             self.parentViewController?.ls_dialogViewController?.viewWillAppear(false)
             self.parentViewController?.ls_dialogBackgroundView?.alpha = 1.0
             dialogView.transform = CGAffineTransform.identity
@@ -191,7 +191,7 @@ open class LSAnimationUtils {
     }
     
     open func zoomOutAnimation(_ dialogView: UIView, sourceView: UIView, overlayView: UIView) {
-        UIView.animate(withDuration: animationDuration, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: { () -> Void in
+        UIView.animate(withDuration: animationDuration, delay: 0.0, options: UIView.AnimationOptions.curveEaseIn, animations: { () -> Void in
             self.parentViewController?.ls_dialogViewController?.viewDidDisappear(false)
             self.parentViewController?.ls_dialogBackgroundView?.alpha = 0.0
             dialogView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
