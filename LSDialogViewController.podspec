@@ -26,7 +26,6 @@ You can easily display a dialog that has a variety of effects Using this library
   s.license          = 'MIT'
   s.author           = { "daihase" => "daisuke_hasegawa@librastudio.co.jp" }
   s.source           = { :git => "https://github.com/daihase/LSDialogViewController.git", :tag => s.version.to_s }
-  s.swift_version = '4.2'	
   s.ios.deployment_target = '8.3'
   s.source_files = 'LSDialogViewController/Classes/**/*'
 end
