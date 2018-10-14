@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
 	spec.name         = 'LSDialogViewController'
-	spec.version      = '3.1'
+	spec.version      = '3.2'
 	spec.license      = 'MIT'
 	spec.homepage     = 'https://github.com/daihase/LSDialogViewController'
 	spec.authors      = { 'daihase' => 'daisuke_hasegawa@librastudio.co.jp' }
