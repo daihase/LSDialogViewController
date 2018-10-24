@@ -1,4 +1,6 @@
-# LSDialogViewController
+<div style="text-align: center; width: 100%">
+<img src="Documents/LSDialogViewController.png" width: 100% height: 100% alt="LSDialogViewController Logo">
+</div>
 
 [![Build Status](https://travis-ci.org/daihase/LSDialogViewController.svg?branch=master)](https://travis-ci.org/daihase/LSDialogViewController)
 [![Language](https://img.shields.io/badge/language-Swift%204-orange.svg)]()
