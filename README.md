@@ -14,7 +14,7 @@
 ![LSDialogViewController_animation](https://raw.github.com/wiki/daihase/resource_manage/gifs/LSDialogViewController_animation.gif)
 
 # Requirement
-- Swift 2+ (**Swift 4.2 is ready** :thumbsup:)
+- Swift 2+ (**Swift 5 is ready** :thumbsup:)
 - iOS 8.0+
 
 # Installation
@@ -25,14 +25,14 @@ LSDialogViewController is available through [CocoaPods](http://cocoapods.org). T
 it, simply add the following line to your Podfile:
 
 ```ruby
+# for Swift 5.0
+pod 'LSDialogViewController', '~> 4.0'
+
 # for Swift 4.2
 pod 'LSDialogViewController', '~> 3.0'
 
 # for Swift 3
 pod 'LSDialogViewController', '~> 0.1.9'
-
-# for Swift 2
-pod 'LSDialogViewController', '0.1.0'
 ```
 
 ### From Carthage
