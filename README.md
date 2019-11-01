@@ -2,10 +2,11 @@
 <img src="Documents/LSDialogViewController.png" width: 100% height: 100% alt="LSDialogViewController Logo">
 </div>
 
-[![Language](https://img.shields.io/badge/language-Swift%204-orange.svg)]()
+[![Language: Swift 5.0](https://img.shields.io/badge/swift-5.0-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
 [![License](https://img.shields.io/cocoapods/l/LSDialogViewController.svg?style=flat)](http://cocoapods.org/pods/LSDialogViewController)
 [![Platform](https://img.shields.io/cocoapods/p/LSDialogViewController.svg?style=flat)](http://cocoapods.org/pods/LSDialogViewController)
 [![CocoaPodsDL](https://img.shields.io/badge/Cocoa%20Pods-%E2%9C%93-4BC51D.svg?style=flat)](https://cocoapods.org/pods/LSDialogViewController)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 
 `LSDialogViewController` is able to easily display a custom view as a dialog.
@@ -33,8 +34,23 @@ pod 'LSDialogViewController', '~> 0.1.9'
 # for Swift 2
 pod 'LSDialogViewController', '0.1.0'
 ```
+
+### From Carthage
+
+Add this to Cartfile.
+```ruby
+github "daihase/LSDialogViewController"
+```
+
+And then, run this command.
+```ruby
+$ carthage update
+```
+
+
 # Usage
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
 
 #### Examples
 
