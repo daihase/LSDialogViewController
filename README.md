@@ -5,83 +5,98 @@
 [![Language: Swift 5.0](https://img.shields.io/badge/swift-5.0-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
 [![License](https://img.shields.io/cocoapods/l/LSDialogViewController.svg?style=flat)](http://cocoapods.org/pods/LSDialogViewController)
 [![Platform](https://img.shields.io/cocoapods/p/LSDialogViewController.svg?style=flat)](http://cocoapods.org/pods/LSDialogViewController)
+[![Swift Package Manager](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager/)
 [![CocoaPodsDL](https://img.shields.io/badge/Cocoa%20Pods-%E2%9C%93-4BC51D.svg?style=flat)](https://cocoapods.org/pods/LSDialogViewController)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 
-`LSDialogViewController` is able to easily display a custom view as a dialog.
+`LSDialogViewController` makes it easy to display a custom view as a dialog with various animation patterns.
 
 ![LSDialogViewController_animation](https://raw.github.com/wiki/daihase/resource_manage/gifs/LSDialogViewController_animation.gif)
 
-# Requirement
-- Swift 2+ (**Swift 5 is ready** :thumbsup:)
-- iOS 8.0+
+# Requirements
+- Swift 5.0+
+- iOS 12.0+
 
 # Installation
 
-### From CocoaPods
+### Swift Package Manager (Recommended)
 
-LSDialogViewController is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+Add the following to your `Package.swift`:
 
-```ruby
-# for Swift 5.0
-pod 'LSDialogViewController', '~> 4.0'
-
-# for Swift 4.2
-pod 'LSDialogViewController', '~> 3.0'
-
-# for Swift 3
-pod 'LSDialogViewController', '~> 0.1.9'
+```swift
+dependencies: [
+    .package(url: "https://github.com/daihase/LSDialogViewController.git", from: "4.1")
+]
 ```
 
-### From Carthage
+Or in Xcode: **File → Add Package Dependencies...** → Enter the repository URL:
 
-Add this to Cartfile.
+```
+https://github.com/daihase/LSDialogViewController.git
+```
+
+### CocoaPods
+
+LSDialogViewController is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
+
+```ruby
+pod 'LSDialogViewController', '~> 4.0'
+```
+
+### Carthage
+
+Add the following to your `Cartfile`:
+
 ```ruby
 github "daihase/LSDialogViewController"
 ```
 
-And then, run this command.
-```ruby
+Then run:
+
+```
 $ carthage update
 ```
 
-
 # Usage
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+To run the example project, clone the repo and run `pod install` from the `Example` directory.
+There is also an SPM-based example in the `ExampleSPM` directory — just open `ExampleSPM.xcodeproj` and build.
 
 #### Examples
 
 ```swift
-
 import LSDialogViewController
-// to show the dialog
-let dialogViewController: CustomDialogViewController = CustomDialogViewController(nibName:"CustomDialog", bundle: nil)
-dialogViewController.delegate = self
-self.presentDialogViewController(dialogViewController, animationPattern: animationPattern, completion: { () -> Void in })
 
-// to dismiss the dialog
-self.dismissDialogViewController(animationPattern)
+// Show a dialog
+let dialogViewController = CustomDialogViewController(nibName: "CustomDialog", bundle: nil)
+dialogViewController.delegate = self
+presentDialogViewController(dialogViewController, animationPattern: .fadeInOut)
+
+// Dismiss the dialog
+dismissDialogViewController(.fadeInOut)
 ```
 
 # Configuration
+
 ```swift
 presentDialogViewController(
-  // required
-  dialogViewController: :UIViewController,
-  // default LSAnimationPattern.FadeInOut
-  animationPattern: LSAnimationPattern,
-  // default LSDialogBackgroundViewType.Solid
-  backgroundViewType: LSDialogBackgroundViewType,
-  // default true
-  dismissButtonEnabled: Bool,
-  // optional
-  completion: (() -> Swift.Void)?
+    // Required: the view controller to display as a dialog
+    dialogViewController: UIViewController,
+    // Animation pattern (default: .fadeInOut)
+    animationPattern: LSAnimationPattern,
+    // Background view type (default: .solid)
+    backgroundViewType: LSDialogBackgroundViewType,
+    // Whether tapping the background dismisses the dialog (default: true)
+    dismissButtonEnabled: Bool,
+    // Called after the dialog is presented
+    completion: (() -> Swift.Void)?
 )
 ```
-Other background view type. (.Gradient .None)
+
+### Background View Types
+
+You can choose from `.solid`, `.gradient`, or `.none`:
 
 ![Image][1]
 .
