@@ -1,16 +1,16 @@
 PODS:
-  - LSDialogViewController (0.1.9)
+  - LSDialogViewController (4.0)
 
 DEPENDENCIES:
   - LSDialogViewController (from `../`)
 
 EXTERNAL SOURCES:
   LSDialogViewController:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  LSDialogViewController: 7c1aec891a0ec81ef31ce6d77c45e6637c9eb9d6
+  LSDialogViewController: 2f42354471b98e59558d5aa2f447f667a1deaf29
 
 PODFILE CHECKSUM: f9169fd7ec329cc3a8743750da4b2886782727d0
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.16.2

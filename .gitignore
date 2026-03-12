@@ -38,3 +38,8 @@ Carthage/Build
 
 .bundle/
 vendor/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
